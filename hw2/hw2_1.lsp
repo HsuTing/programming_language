@@ -1,0 +1,1 @@
+(defun prime(x) (if(<= x 1) 'f (let((i 2))(loop(when(> i (sqrt x)) (return '(prime))) (when(= (rem x i) 0) (return '(not prime))) (incf i)))))

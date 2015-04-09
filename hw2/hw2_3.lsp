@@ -1,0 +1,5 @@
+(defun fib1 (x) (if(< x 0) 'f (if(< x 2) x (+ (fib1 (- x 1)) (fib1 (- x 2))))))
+(trace fib1)
+(defun tail (x b1 b2 begin) (if(= x begin) (+ b1 b2) (tail x b2 (+ b1 b2) (incf begin))))
+(defun fib2 (x) (if(< x 0) 'f (if(or (= x 1) (= x 2)) '1 (tail x 1 1 3 ))))
+(trace tail)

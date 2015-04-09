@@ -1,0 +1,1 @@
+(defun palindrome(x) (if(eq x '()) 't (let((i 0))(loop(when(> i (/ (length x) 2)) (return 't))(if(eq (nth i x) (nth (- (- (length x) i) 1) x)) (incf i) (return 'f))))))
