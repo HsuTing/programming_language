@@ -1,7 +1,7 @@
 use LWP::Simple;
 use utf8;
 use Encode;
-binmode(STDOUT, ":encoding(big5)");
+binmode(STDOUT, ":encoding(utf8)");
 
 print "台南國賓影城\n";
 &function("http://www.atmovies.com.tw/showtime/theater_t06608_a06.html");
@@ -11,7 +11,7 @@ print "台南威秀影城\n";
 &function("http://www.atmovies.com.tw/showtime/theater_t06609_a06.html");
 
 sub function{
-	$url =shift @_;
+	$url = shift @_;
 	$html = get($url);
 	# print $html;
 	@array = split('<|>',$html);
@@ -27,4 +27,5 @@ sub function{
 		}
 		$i++;
 	}
+	print "\n";
 }
